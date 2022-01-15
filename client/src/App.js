@@ -1,5 +1,5 @@
 import logo from "./logo.svg";
-import React from 'react';
+import React from "react";
 import "./App.css";
 import { Start, Next, Stop, setConectStatus } from "./conection";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -7,20 +7,20 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   const [value, setValue] = React.useState(false);
   const [valueHide, setValueHide] = React.useState(false);
-  setConectStatus(setValueHide)
+  setConectStatus(setValueHide);
   const next = () => {
     Next();
-  }
+  };
 
   const start = () => {
     setValue(!value);
     Start();
-  }
+  };
 
   const stop = () => {
     setValue(!value);
     Stop();
-  }
+  };
 
   return (
     <div className="App">
@@ -29,8 +29,16 @@ function App() {
           <video id="localVideo" muted autoPlay />
         </div>{" "}
         <div className="col-6 mt-3 px-2">
-          <div className={valueHide ? "h-100" : "h-100 hider"} id="remoteVideoHide">
-            <video className={valueHide ? "" : " hide"} id="remoteVideo" muted autoPlay />
+          <div
+            className={valueHide ? "h-100" : "h-100 hider"}
+            id="remoteVideoHide"
+          >
+            <video
+              className={valueHide ? "" : " hide"}
+              id="remoteVideo"
+              muted
+              autoPlay
+            />
           </div>
         </div>{" "}
       </div>{" "}
@@ -38,7 +46,9 @@ function App() {
         <div className="px-2 col-4">
           <button
             id="next"
-            className={value ? "btn btn-primary btn-lg" : "btn btn-primary btn-lg hide"}
+            className={
+              value ? "btn btn-primary btn-lg" : "btn btn-primary btn-lg hide"
+            }
             onClick={next}
           >
             Next
@@ -47,7 +57,9 @@ function App() {
         <div className="px-2 col-4">
           <button
             id="stop"
-            className={value ? "btn btn-primary btn-lg" : "btn btn-primary btn-lg hide"}
+            className={
+              value ? "btn btn-primary btn-lg" : "btn btn-primary btn-lg hide"
+            }
             onClick={stop}
           >
             Stop
@@ -56,7 +68,9 @@ function App() {
         <div className="px-2 col-4">
           <button
             id="start"
-            className={value ? "btn btn-primary hide btn-lg" : "btn btn-primary btn-lg"}
+            className={
+              value ? "btn btn-primary hide btn-lg" : "btn btn-primary btn-lg"
+            }
             onClick={start}
           >
             Start
